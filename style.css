@@ -71,7 +71,15 @@ header>a>img:hover {
 }
 
 /* preload image */
-#page1::after {
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url('images/background1.jpg');
+}
+body::after {
   position: absolute;
   width: 0;
   height: 0;
