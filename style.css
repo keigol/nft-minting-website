@@ -85,6 +85,10 @@ header>a>img:hover {
 }
 
 /* preload images */
+body:after {
+  content: url('images/2.png') url('images/3.png') url('images/4.png') url('images/5.png');
+  display: none;
+}
 body::after {
   position: absolute;
   width: 0;
@@ -110,40 +114,4 @@ body::after {
   overflow: hidden;
   z-index: -1;
   content: url('images/background3.jpg');
-}
-
-body::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  content: url('images/2.png');
-}
-
-body::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  content: url('images/3.png');
-}
-
-body::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  content: url('images/4.png');
-}
-
-body::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  content: url('images/5.png');
 }
