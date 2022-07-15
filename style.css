@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#wallet-address {
+  text-indent: 15px;
+}
+
+header {
+  margin-top: 1vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+header>a {
+  padding: 25px;
+}
+
+header>a>img:hover {
+  transform: rotate(-10deg);
+}
+
+.container {
+  margin: 25px;
+  width: 350px;
+  height: 200px;
+  text-align: center;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button:hover {
+  transform: scale(1.1);
+}
+
+.borb {
+  background-image: url('images/background.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 25px;
+  width: 600px;
+  height: 400px;
+  text-align: center;
+  position: fixed;
+  top: 60%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+#mint-info {
+  position: absolute;
+  top: 24%;
+  left: -3.5%;
+  width: 330px;
+  transform: translate(-50%, -50%);
+  transform: rotate(-3.5deg);
+}
+
+#amount {
+  position: relative;
+  top: 18px;
+  width: 80px;
+}
+
+#mint {
+  margin: 26px;
+}
+
+/* preload image */
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url('images/background2.jpg');
+}
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url('images/background3.jpg');
+}
+
+#page2 {
+  display: none;
+}

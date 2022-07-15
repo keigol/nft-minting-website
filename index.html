@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>borb.</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/merkletreejs@latest/merkletree.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/keccak256@latest/keccak256.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <audio id="music" src="music/BORBIES.mp3" loop></audio>
+  <div id="page1" class="container" style="top:50%">
+    <div><img id="enter" class="button" src="images/mint.png" width="80"></div>
+  </div>
+  <div id="page2">
+    <div>
+      <p id="wallet-address">wallet not connected</p>
+    </div>
+    <header>
+      <a href="https://opensea.io"><img src="images/os.png" width="64"></a>
+      <a href="https://twitter.com/borbsNFT"><img src="images/tw.png" width="64"></a>
+    </header>
+    <div class="borb">
+      <img id="mint-info" src="images/mintinfo.png">
+    </div>
+    <div class="container">
+      <div>
+        <span><img id="minus" class="button" src="images/minus.png" width="45"></span>
+        <img id="amount" src="images/1.png">
+        <span><img id="plus" class="button" src="images/plus.png" width="45"></span>
+      </div>
+      <div><img id="mint" class="button" src="images/mint.png" width="80"></div>
+    </div>
+  </div>
+</body>
+
+</html>
