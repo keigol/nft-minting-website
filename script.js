@@ -834,7 +834,7 @@ $(document).ready(function () {
 
 document.getElementById('enter').onclick = () => {
     var music = document.getElementById('music');
-    music.volume = 0.1;
+    music.volume = 0.08;
     music.play();
     document.getElementById('page1').style.display = 'none';
     document.getElementById('page2').style.display = 'block';

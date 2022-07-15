@@ -71,7 +71,7 @@ header>a>img:hover {
 }
 
 /* preload image */
-body::after {
+#page1::after {
   position: absolute;
   width: 0;
   height: 0;
