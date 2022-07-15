@@ -70,7 +70,21 @@ header>a>img:hover {
   margin: 26px;
 }
 
-/* preload image */
+
+#page2 {
+  display: none;
+}
+
+#test {
+  height: 100px;
+  width: 100px;
+}
+
+#test:hover {
+  background-color: black;
+}
+
+/* preload images */
 body::after {
   position: absolute;
   width: 0;
@@ -79,6 +93,7 @@ body::after {
   z-index: -1;
   content: url('images/background1.jpg');
 }
+
 body::after {
   position: absolute;
   width: 0;
@@ -97,6 +112,38 @@ body::after {
   content: url('images/background3.jpg');
 }
 
-#page2 {
-  display: none;
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url('images/2.png');
+}
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url('images/3.png');
+}
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url('images/4.png');
+}
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url('images/5.png');
 }
