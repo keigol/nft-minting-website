@@ -807,29 +807,29 @@ document.getElementById('minus').onclick = () => {
     }
 };
 $(document).ready(function () {
-    var pause = false;
-    var interval = window.setInterval(function () {
-        if (!pause) {
-            $('.borb').css('background-image', "url('images/background3.jpg')");
-            window.setTimeout(function () {
-                $('.borb').css('background-image', "url('images/background.jpg')");
-            }, 200);
-            window.setTimeout(function () {
-                $('.borb').css('background-image', "url('images/background3.jpg')");
-            }, 500);
-            window.setTimeout(function () {
-                $('.borb').css('background-image', "url('images/background.jpg')");
-            }, 700);
-        }
-    }, 9000);
+    // var pause = false;
+    // var interval = window.setInterval(function () {
+    //     if (!pause) {
+    //         $('.borb').css('background-image', "url('images/background3.jpg')");
+    //         window.setTimeout(function () {
+    //             $('.borb').css('background-image', "url('images/background.jpg')");
+    //         }, 200);
+    //         window.setTimeout(function () {
+    //             $('.borb').css('background-image', "url('images/background3.jpg')");
+    //         }, 500);
+    //         window.setTimeout(function () {
+    //             $('.borb').css('background-image', "url('images/background.jpg')");
+    //         }, 700);
+    //     }
+    // }, 9000);
 
-    $("#mint").hover(function () {
-        pause = true;
-        $('.borb').css('background-image', "url('images/background2.jpg')");
-    }, function () {
-        pause = false;
-        $('.borb').css('background-image', "url('images/background.jpg')");
-    });
+    // $("#mint").hover(function () {
+    //     pause = true;
+    //     $('.borb').css('background-image', "url('images/background2.jpg')");
+    // }, function () {
+    //     pause = false;
+    //     $('.borb').css('background-image', "url('images/background.jpg')");
+    // });
 })
 
 document.getElementById('enter').onclick = () => {
