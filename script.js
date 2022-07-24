@@ -723,47 +723,53 @@ async function connectWallet() {
 
         window.web3 = new Web3(window.ethereum);
 
-        // generate proof
-        contract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);
-        let leaf = keccak256(account);
-        const PROOF = MERKLE_TREE.getProof(leaf).map(x => buf2Hex(x.data));
-        console.log(PROOF);
+        // // generate proof
+        // contract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);
+        // let leaf = keccak256(account);
+        // const PROOF = MERKLE_TREE.getProof(leaf).map(x => buf2Hex(x.data));
+        // console.log(PROOF);
 
-        // whitelisted not whitelisted
-        isPublicLive = await contract.methods.isPublicLive().call();
-        if (isPublicLive) {
-            document.getElementById('wallet-address').innerHTML = "wallet connected";
-        } else {
-            if (WL_ADDRESSES.includes(account.toUpperCase())) {
-                document.getElementById('wallet-address').innerHTML = "you are whitelisted!";
-            } else {
-                document.getElementById('wallet-address').innerHTML = "you are not whitelisted";
-            }
-        }
+        // // whitelisted not whitelisted
+        // isPublicLive = await contract.methods.isPublicLive().call();
+        // if (isPublicLive) {
+        //     document.getElementById('wallet-address').innerHTML = "wallet connected";
+        // } else {
+        //     if (WL_ADDRESSES.includes(account.toUpperCase())) {
+        //         document.getElementById('wallet-address').innerHTML = "you are whitelisted!";
+        //     } else {
+        //         document.getElementById('wallet-address').innerHTML = "you are not whitelisted";
+        //     }
+        // }
 
         // check if claimed free
         claimedFree = await contract.methods.addressClaimed(account).call();
 
         // mint!
         document.getElementById('mint').onclick = () => {
-            // recheck wl phase and if free left !!! what if tx fails because not enough $
-            (async () => {
-                let valueToSend;
-                isPublicLive = await contract.methods.isPublicLive().call();
-                if (isPublicLive) {
-                    if (!claimedFree && (await contract.methods.numFreeMinted().call()) <= 1000) {
-                        valueToSend = ((mintAmount - 1) * mintPriceWei).toString();
-                    } else {
-                        valueToSend = (mintAmount * mintPriceWei).toString();
-                    }
-                    contract.methods.mint(mintAmount).send({ from: account, value: valueToSend });
-                }
-                else {
-                    valueToSend = ((mintAmount - 1) * mintPriceWei).toString();
-                    contract.methods.whitelistMint(PROOF, mintAmount).send({ from: account, value: valueToSend });
-                }
-            })();
 
+            if (!claimedFree && (await contract.methods.numFreeMinted().call()) <= 1000) {
+                valueToSend = ((mintAmount - 1) * mintPriceWei).toString();
+            } else {
+                valueToSend = (mintAmount * mintPriceWei).toString();
+            }
+            contract.methods.mint(mintAmount).send({ from: account, value: valueToSend });
+            // // recheck wl phase and if free left !!! what if tx fails because not enough $
+            // (async () => {
+            //     let valueToSend;
+            //     isPublicLive = await contract.methods.isPublicLive().call();
+            //     if (isPublicLive) {
+            //         if (!claimedFree && (await contract.methods.numFreeMinted().call()) <= 1000) {
+            //             valueToSend = ((mintAmount - 1) * mintPriceWei).toString();
+            //         } else {
+            //             valueToSend = (mintAmount * mintPriceWei).toString();
+            //         }
+            //         contract.methods.mint(mintAmount).send({ from: account, value: valueToSend });
+            //     }
+            //     else {
+            //         valueToSend = ((mintAmount - 1) * mintPriceWei).toString();
+            //         contract.methods.whitelistMint(PROOF, mintAmount).send({ from: account, value: valueToSend });
+            //     }
+            // })();
         };
     }
 };
