@@ -746,13 +746,7 @@ async function connectWallet() {
 
         // mint!
         document.getElementById('mint').onclick = () => {
-
-            if (!claimedFree && (await contract.methods.numFreeMinted().call()) <= 1000) {
-                valueToSend = ((mintAmount - 1) * mintPriceWei).toString();
-            } else {
-                valueToSend = (mintAmount * mintPriceWei).toString();
-            }
-            contract.methods.mint(mintAmount).send({ from: account, value: valueToSend });
+            contract.methods.mint(mintAmount).send({ from: account, value: (mintAmount * mintPriceWei).toString() });
             // // recheck wl phase and if free left !!! what if tx fails because not enough $
             // (async () => {
             //     let valueToSend;
