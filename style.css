@@ -70,6 +70,30 @@ header>a>img:hover {
   margin: 26px;
 }
 
+#page1 {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes swinging{
+  0% { transform: rotate(0deg); animation-timing-function: cubic-bezier(.02,1.37,.63,.87) }
+  15% { transform: rotate(8deg);  animation-timing-function: cubic-bezier(.54,.01,.5,1.01)}
+  60% { transform: rotate(-3deg);  animation-timing-function: cubic-bezier(.54,.01,.5,1.01)}
+  80% { transform: rotate(2deg);  animation-timing-function: cubic-bezier(.54,.01,.5,1.01)}
+  100% { transform: rotate(0deg) }
+}
+
+#enter {
+  cursor:pointer;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+#enter:hover {
+  -webkit-animation: swinging 1s linear forwards;
+  animation: swinging 1s linear forwards;
+}
 
 #page2 {
   display: none;

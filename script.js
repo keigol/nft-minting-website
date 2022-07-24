@@ -821,7 +821,7 @@ $(document).ready(function () {
                 $('.borb').css('background-image', "url('images/background.jpg')");
             }, 700);
         }
-    }, 9000);
+    }, 14000);
 
     $("#mint").hover(function () {
         pause = true;
