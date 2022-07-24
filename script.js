@@ -731,9 +731,9 @@ async function connectWallet() {
 
         // // whitelisted not whitelisted
         // isPublicLive = await contract.methods.isPublicLive().call();
-        // if (isPublicLive) {
-        //     document.getElementById('wallet-address').innerHTML = "wallet connected";
-        // } else {
+        if (isPublicLive) {
+            document.getElementById('wallet-address').innerHTML = "wallet connected";
+        }
         //     if (WL_ADDRESSES.includes(account.toUpperCase())) {
         //         document.getElementById('wallet-address').innerHTML = "you are whitelisted!";
         //     } else {
