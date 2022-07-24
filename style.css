@@ -35,6 +35,9 @@ header>a {
 header>a>img:hover {
   transform: rotate(-10deg);
 }
+header>img:hover {
+  transform: rotate(-10deg);
+}
 
 .container {
   margin: 25px;
