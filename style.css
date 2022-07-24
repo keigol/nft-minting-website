@@ -18,6 +18,20 @@ header>a {
   padding: 25px;
 }
 
+#mm {
+  cursor: pointer;
+  padding-left: 25px;
+  padding-right: 25px;
+  filter: contrast(80%);
+}
+
+#mute {
+  cursor: pointer;
+  padding-left: 25px;
+  padding-right: 20px;
+  filter: contrast(40%);
+}
+
 header>a>img:hover {
   transform: rotate(-10deg);
 }

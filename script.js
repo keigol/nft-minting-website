@@ -735,7 +735,8 @@ const ABI = [
     }
 ];
 const CONTRACT_ADDRESS = "0xe733A5ccbcbBE539d2D7265f20617E51f62eCcA9";
-(async () => {
+
+async function connectWallet() {
     if (window.ethereum) {
         // connect wallet
         try {
@@ -791,7 +792,7 @@ const CONTRACT_ADDRESS = "0xe733A5ccbcbBE539d2D7265f20617E51f62eCcA9";
 
         };
     }
-})();
+};
 
 // html spaghetti code
 document.getElementById('plus').onclick = () => {
@@ -838,4 +839,19 @@ document.getElementById('enter').onclick = () => {
     music.play();
     document.getElementById('page1').style.display = 'none';
     document.getElementById('page2').style.display = 'block';
+};
+
+document.getElementById('mute').onclick = () => {
+    var music = document.getElementById('music');
+    if (music.paused) {
+        music.play();
+        document.getElementById('mute').src="images/sound_off.png";
+    } else {
+        music.pause();
+        document.getElementById('mute').src="images/sound_on.png";
+    }
+};
+
+document.getElementById('mm').onclick = () => {
+    connectWallet();
 };
