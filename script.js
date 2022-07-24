@@ -742,7 +742,6 @@ async function connectWallet() {
         // }
 
         // check if claimed free
-        claimedFree = await contract.methods.addressClaimed(account).call();
 
         // mint!
         document.getElementById('mint').onclick = () => {
