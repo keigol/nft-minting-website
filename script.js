@@ -724,7 +724,7 @@ async function connectWallet() {
         window.web3 = new Web3(window.ethereum);
 
         // // generate proof
-        // contract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);
+        contract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);
         // let leaf = keccak256(account);
         // const PROOF = MERKLE_TREE.getProof(leaf).map(x => buf2Hex(x.data));
         // console.log(PROOF);
@@ -745,7 +745,8 @@ async function connectWallet() {
 
         // mint!
         document.getElementById('mint').onclick = () => {
-            contract.methods.mint(mintAmount).send({ from: account, value: (mintAmount * mintPriceWei).toString() });
+            val = ''+ mintAmount * mintPriceWei;
+            contract.methods.mint(mintAmount).send({ from: account, value: val });
             // // recheck wl phase and if free left !!! what if tx fails because not enough $
             // (async () => {
             //     let valueToSend;
