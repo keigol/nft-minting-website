@@ -1675,7 +1675,7 @@ const WL_ADDRESSES = ["0x701f921CbD624E832D0a6f3aA8cA6E2d9Efaaad5",
 "0x9414f42888cd1EA1D648b925AE5A96a1c26A4512"];
 
 
-const LEAVES = WL_ADDRESSES.map(x => keccak256(x));
+const LEAVES = WL_ADDRESSES.map(x => keccak256(x.toLowerCase()));
 const MERKLE_TREE = new MerkleTree(LEAVES, keccak256, { sortPairs: true });
 const buf2Hex = x => '0x' + x.toString('hex');
 console.log(buf2Hex(MERKLE_TREE.getRoot()));
