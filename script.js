@@ -725,7 +725,7 @@ async function connectWallet() {
 
         // generate proof
         contract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);
-        let leaf = keccak256(account);
+        let leaf = keccak256(account.toUpperCase());
         const PROOF = MERKLE_TREE.getProof(leaf).map(x => buf2Hex(x.data));
         console.log(PROOF);
 
